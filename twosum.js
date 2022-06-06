@@ -1,26 +1,25 @@
-function  main()
+// Given a target value return the positions of a 
+// given array that adds to the target value
+function  twoSum()
 {
-    let nums = [5,5,5,5,7,7,9];
-    let k = 2;
+    let target = 9;
+    let nums = [2,7,11,15];
 
-    const hash = nums.reduce((res, x) => {
-        if (!res[x]) {
-            res[x] = 0;
+    let differnce = 0 ;
+    const map1 = new Map()
+
+
+    for (var i = 0; i < nums.length; i++)
+    {
+        //difference is equal to the target - the current value being tested. if the difference exists
+        //then those are the values that add to the target.
+        differnce = target -  nums[i];
+        if (map1.has(differnce))
+        {
+            return  [map1.get(differnce), i];
         }
-        
-        res[x]++;
-        console.log(res)
-       // console.log(x)
-        
-        return res;
-    }, {});
-
-    console.log(hash)
-    
-    return Object.keys(hash)
-        .sort((a, b) => hash[b] - hash[a])
-        .filter((x, i) => i < k)
-        .map(x => parseInt(x));
+        map1.set(nums[i],i)
+    }
 }
 
-console.log(main());
+console.log(twoSum());

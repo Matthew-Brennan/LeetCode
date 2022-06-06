@@ -1,4 +1,4 @@
-function  main()
+function  topFrequent()
 {
     let nums = [5,5,5,5,7,7,9];
     let k = 2;
@@ -8,14 +8,9 @@ function  main()
             res[x] = 0;
         }
         
-        res[x]++;
-        console.log(res)
-       // console.log(x)
-        
+        res[x]++;        
         return res;
     }, {});
-
-    console.log(hash)
     
     return Object.keys(hash)
         .sort((a, b) => hash[b] - hash[a])
@@ -23,4 +18,4 @@ function  main()
         .map(x => parseInt(x));
 }
 
-console.log(main());
+console.log(topFrequent());

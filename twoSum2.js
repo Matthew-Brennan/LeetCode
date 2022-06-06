@@ -1,4 +1,4 @@
-function asda()
+function twoSum2()
 {
 let differnce = 0 ;
 let nums = [2,7,11,15] 
@@ -19,4 +19,4 @@ for (var i = 0; i < nums.length; i++)
 }
 }
 
-console.log(asda())
+console.log(twoSum2())
